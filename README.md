@@ -24,6 +24,10 @@
 >>4.2
 ----
 >django-admin startproject askme_pankin __#создать Django проект (перенести в него всё)__
+----
+>python3 manage.py runserver __#запустить сервер__
+
+>python3 manage.py startapp askme __#cоздать Django  приложение__
 
 
 
