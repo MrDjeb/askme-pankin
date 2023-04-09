@@ -2,7 +2,8 @@
 
 ----
 >python3 --version
-    >>Python 3.10.6
+
+>>Python 3.10.6
 ----
 >sudo apt install python3.10-venv
 
@@ -19,7 +20,8 @@
 >pip3 install Django
 
 >python3 -m django --version
-    >>4.2
+
+>>4.2
 ----
 >django-admin startproject askme_pankin __#создать Django проект (перенести в него всё)__
 
