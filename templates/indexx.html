@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+  <title>askme</title>
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/fonts/ionicons.min.css" />
+  <link rel="stylesheet" href="assets/css/gradient-navbar-styles.css" />
+  <link rel="stylesheet" href="assets/css/gradient-navbar.css" />
+  <link rel="stylesheet" href="assets/css/Navbar-Centered-Brand-icons.css" />
+  <link rel="stylesheet" href="assets/css/Search-Input-responsive.css" />
+</head>
+
+<body style="border-color: var(--bs-border-color-translucent); border-radius: 0px">
+  <header class="navbar" style="
+        height: 96px;
+        background: linear-gradient(120deg, #00e4d0, #5983e8);
+      ">
+    <a href="#"><img src="assets/img/logo_askme.png" width="243" style="
+            width: 243px;
+            margin-left: 10px;
+            padding-left: 0px;
+            border-radius: 15px;
+          " height="77" /></a>
+    <div class="col-sm form-group mb-3">
+      <div>
+        <input type="text" class="form-control ps-4 pe-4 rounded-pill" name="search" placeholder="Search..." style="
+              margin-left: auto;
+              width: 300px;
+              margin-bottom: auto;
+              padding-top: 6px;
+              padding-bottom: 0px;
+              margin-top: 0px;
+            " />
+      </div>
+      <button class="btn btn-primary" type="button" style="margin-left: 10px; margin-right: 10px">
+        Button
+      </button>
+    </div>
+    <nav class="navbar navbar-dark navbar-expand-md" id="app-navbar" style="margin-left: auto; margin-right: 10px">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><i class="icon ion-ios-infinite" id="brand-logo"></i></a><button
+          data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1">
+          <span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">First Item</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Second Item</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Third Item</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="flex-shrink-0">
+    <div class="container">
+      <h1 class="mt-5">New questions</h1>
+      <div class="row">
+        <div class="col-9">{%block content%}{% endblock content %}</div>
+        <div class="col-3">Left</div>
+      </div>
+
+      <div>
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            <li class="page-item">
+              <a class="page-link" href="#">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </main>
+
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

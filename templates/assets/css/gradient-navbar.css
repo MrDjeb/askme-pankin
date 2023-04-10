@@ -1,0 +1,25 @@
+#brand-logo {
+  font-size: 34px;
+}
+
+#app-navbar {
+  background: linear-gradient(120deg, #00e4d0, #5983e8);
+}
+
+.search-box {
+  flex: 0 0 auto;
+  vertical-align: top;
+  isplay: inline-block;
+  position: relative;
+  margin-right: 1rem;
+}
+
+.links {
+  top: auto!important;
+  right: auto!important;
+  background: transparent!important;
+  font-size: 16px!important;
+  position: relative!important;
+  align-items: center;
+}
+
