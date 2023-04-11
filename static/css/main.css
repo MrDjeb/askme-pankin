@@ -38,6 +38,10 @@ main>.container {
   }
 }
 
+.vertical-line{
+  border-left: 6px solid green;
+}
+
 .brand-logo {
   height: 38px;
 }
