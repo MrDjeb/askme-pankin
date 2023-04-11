@@ -1,0 +1,7 @@
+{% extends 'inc/base.html' %}
+
+{% block content %}
+  {% for question in questions %}
+    {% include 'inc/question-item.html' %}
+  {% endfor %}
+{% endblock %}

@@ -1,0 +1,20 @@
+{% load static %}
+<div class="question">
+  <div class="row">
+    <div class="col-3">
+      <div class="question-avatar">
+        <img src="{% static 'img/avatar1.jpeg' %}" alt="avatar" />
+      </div>
+    </div>
+    <div class="col-6">
+      <h2><a href="#">{{ question.title }}</a></h2>
+      <div class="question-text">{{ question.text }}</div>
+      <div class="row">
+        <div class="col-4">Answeres (3)</div>
+        <div class="col-8">
+          <a href="#">Black</a> <a href="#">Black</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

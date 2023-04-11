@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Sticky Footer Navbar Template · Bootstrap v5.3</title>
+  <link href="../static/css/bootstrap.css" rel="stylesheet" crossorigin="anonymous" />
+  <link href="../static/css/bootstrap.css.map" rel="stylesheet" />
+  <link href="../static/css/main.css" rel="stylesheet" />
+</head>
+
+<body class="d-flex flex-column h-100">
+  <header>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-md fixed-top" style="background: linear-gradient(120deg, #00e4d0, #5983e8);">
+      <div class="container-fluid">
+        <a href="index.html">
+          <div class="brand-logo">
+            <img src="../static/img/logo_askme.png" />
+          </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span
+            class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <form class="d-flex ms-5" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+            <button class="btn btn-outline-success" type="submit">Search</button>
+            <a class="ms-4 btn btn-dark col-auto " href="ask.html" type="submit">Ask!</a>
+          </form>
+
+          <ul class="navbar-nav ms-auto mb-2 mb-md-0 me-4">
+            <div class="login-navbar">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="login.html">Login</a>
+              </li>
+            </div>
+            <div class="signup-navbar">
+              <li class="nav-item">
+                <a class="nav-link" href="signup.html">SignUp</a>
+              </li>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Begin page content -->
+  <main class="flex-shrink-0 bg">
+    <div class="container">
+      <div class="row">
+        <div class="col-9">
+          <!-- Begin Right part -->
+
+          <div class="col-lg-12 col-xl-11">
+            <div class="card text-black" style="border-radius: 25px;">
+              <div class="card-body p-md-5">
+                <div class="row justify-content-center">
+                  <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Settings Username</p>
+
+                    <form class="mx-1 mx-md-4">
+
+                      <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                          <input type="text" id="form3Example1c" class="form-control" value="Some data"/>
+                          <label class="form-label" for="form3Example1c">Your Login</label>
+                        </div>
+                      </div>
+
+                      <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                          <input type="email" id="form3Example3c" class="form-control" value="Some data"/>
+                          <label class="form-label" for="form3Example3c">Your Email</label>
+                        </div>
+                      </div>
+
+                      <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                          <input type="text" id="form3Example4c" class="form-control" value="Some data"/>
+                          <label class="form-label" for="form3Example4c">Your Nickname</label>
+                        </div>
+                      </div>
+
+                      <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                          <input class="form-control" id="formFile" type="file" />
+                          <div class="small text-muted mt-2">Upload your avatar. Max file size 50 MB</div>
+                        </div>
+                      </div>
+
+                      <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                        <button type="button" class="btn btn-primary btn-lg">Save</button>
+                      </div>
+
+                    </form>
+
+                  </div>
+                  <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+
+                    <img src="../static/img/avatar1.jpeg"
+                      class="img-fluid" alt="Sample image">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <!-- End Right part -->
+        </div>
+        <div class="col-3">
+          <!— tags —>
+            <div class="tags-area mt-5">
+              <h2 class="mt-5">Tags</h2>
+              <div class="col-md-12">
+                <div class="tag-list well">
+                  <a href="#" class="btn btn-primary" role="button"><b style="font-size: 20pt;">FPS</b></a>
+                  <a href="#" class="btn btn-primary" role="button"><b style="font-size: 10pt;">FPS</b></a>
+                  <a href="#" class="btn btn-primary" role="button"><b style="font-size: 8pt;">FPS</b> </a>
+                  <a href="#" class="btn btn-primary" role="button"><b style="font-size: 11pt;">FPS</b></a>
+                  <a href="#" class="btn btn-primary" role="button"><b style="font-size: 17pt;">FPS</b></a>
+                  <a href="#" class="btn btn-primary" role="button"><b style="font-size: 20pt;">FPS</b></a>
+                  <a href="#" class="btn btn-primary" role="button"><b style="font-size: 12pt;">FPS</b></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="tags-area mt-5">
+              <h2 class="mt-5">Best Members</h2>
+              <div class="col-md-12">
+                <div class="best-members-list well">
+                  <a href="#" class="btn btn-info" role="button"><b style="font-size: 20pt;">FPS</b></a>
+                  <a href="#" class="btn btn-info" role="button"><b style="font-size: 10pt;">FPS</b></a>
+                  <a href="#" class="btn btn-info" role="button"><b style="font-size: 8pt;"> FPS</b></a>
+                  <a href="#" class="btn btn-info" role="button"><b style="font-size: 11pt;">FPS</b></a>
+                  <a href="#" class="btn btn-info" role="button"><b style="font-size: 17pt;">FPS</b></a>
+                  <a href="#" class="btn btn-info" role="button"><b style="font-size: 20pt;">FPS</b></a>
+                  <a href="#" class="btn btn-info" role="button"><b style="font-size: 12pt;">FPS</b></a>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer mt-auto py-3 bg-light">
+    <div class="container">
+      <span class="text-body-secondary">Place sticky footer content here.</span>
+    </div>
+  </footer>
+</body>
+
+</html>c

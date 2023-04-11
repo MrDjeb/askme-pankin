@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Sticky Footer Navbar Template · Bootstrap v5.3</title>
+	<link href="../static/css/bootstrap.css" rel="stylesheet" crossorigin="anonymous" />
+	<link href="../static/css/bootstrap.css.map" rel="stylesheet" />
+	<link href="../static/css/main.css" rel="stylesheet" />
+</head>
+
+<body class="d-flex flex-column h-100">
+	<header>
+		<!-- Fixed navbar -->
+		<nav class="navbar navbar-expand-md fixed-top" style="background: linear-gradient(120deg, #00e4d0, #5983e8);">
+			<div class="container-fluid">
+				<a href="index.html">
+					<div class="brand-logo">
+						<img src="../static/img/logo_askme.png" />
+					</div>
+				</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+					aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span
+						class="navbar-toggler-icon"></span></button>
+				<div class="collapse navbar-collapse" id="navbarCollapse">
+					<form class="d-flex ms-5" role="search">
+						<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+						<button class="btn btn-outline-success" type="submit">Search</button>
+						<a class="ms-4 btn btn-dark col-auto " href="ask.html" type="submit">Ask!</a>
+					</form>
+
+					<ul class="navbar-nav ms-auto mb-2 mb-md-0 me-4">
+						<div class="login-navbar">
+							<li class="nav-item">
+								<a class="nav-link active" aria-current="page" href="login.html">Login</a>
+							</li>
+						</div>
+						<div class="signup-navbar">
+							<li class="nav-item">
+								<a class="nav-link" href="signup.html">SignUp</a>
+							</li>
+						</div>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<!-- Begin page content -->
+	<main class="bg flex-shrink-0">
+		<div class="container">
+			<h1 class="mt-5">New questions</h1>
+			<div class="row">
+				<div class="col-9">
+					<!-- Begin Right part -->
+
+					<div class="question">
+						<div class="row">
+							<div class="col-3">
+								<div class="question-avatar">
+									<img src="../static/img/avatar1.jpeg" alt="avatar" />
+								</div>
+							</div>
+							<div class="col-6">
+								<h2><a href="#">{{ question.title }}</a></h2>
+								<div class="question-text">{{ question.text }}</div>
+								<div class="mt-5 row">
+									<div class="col-4">Answeres (3)</div>
+									<div class="col-8">
+										<a href="#">Black</a> <a href="#">Black</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row me-4">
+						<h2 class="mt-4 mb-3">Answers</h2>
+
+						<!-- Answers -->
+						<div class="row answer">
+							<div class="col-2">
+								<div class="question-avatar">
+                  <img src="../static/img/avatar1.jpeg" alt="avatar" />
+                </div>	
+								<div class="row mt-2 ms-2">
+									<div class="col-3">
+										<a href="#" title="Like" class="col-2 like-btn" data-count="0">
+											<span>&#9650;</span>
+										</a>
+									</div>
+									<div class="col-3">
+										<a href="#" title="Dislike" class="col-2 dislike-btn" data-count="0">
+											<span>&#9660;</span>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-10 ps-5">
+								<p> Answer text Prepare fully temper address concerns has abroad timed event sex. Screened neglected strictly dependent shot civil required neat future insipidity into smart matter occasional fact. Natural uncommonly when towards great throwing meet placing cordial others consulted. Cease instrument prosperous repair. Concealed after misery why sister form hour interested.  </p>
+								<div class="form-check">
+									<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+									<label class="form-check-label" for="flexCheckChecked">
+										Correct
+									</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="row answer">
+							<div class="col-2">
+								<div class="question-avatar">
+                  <img src="../static/img/avatar1.jpeg" alt="avatar" />
+                </div>	
+								<div class="row mt-2 ms-2">
+									<div class="col-3">
+										<a href="#" title="Like" class="col-2 like-btn" data-count="0">
+											<span>&#9650;</span>
+										</a>
+									</div>
+									<div class="col-3">
+										<a href="#" title="Dislike" class="col-2 dislike-btn" data-count="0">
+											<span>&#9660;</span>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-10 ps-5">
+								<p> Answer text Prepare fully temper address concerns has abroad timed event sex. Screened neglected strictly dependent shot civil required neat future insipidity into smart matter occasional fact. Natural uncommonly when towards great throwing meet placing cordial others consulted. Cease instrument prosperous repair. Concealed after misery why sister form hour interested.  </p>
+								<div class="form-check">
+									<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+									<label class="form-check-label" for="flexCheckChecked">
+										Correct
+									</label>
+								</div>
+							</div>
+						</div>
+
+						
+						<!-- Answers -->
+						<nav aria-label="Page navigation example">
+							<ul class="pagination justify-content-center">
+								<li class="page-item enabled">
+									<a href="?page=0" class="page-link">Previous</a>
+								</li>
+								<li class="page-item active"><a class="page-link" href="?page=1"> 1 </a></li>
+
+								<li class="page-item enabled">
+									<a href="?page=2" class="page-link" href="#">Next</a>
+								</li>
+							</ul>
+						</nav>
+
+					</div>
+
+					<div class="row inpAns">
+						<div class="mb-3">
+							<label for="questionTextArea" class="form-label">Your answer</label>
+							<textarea placeholder="Enter your answer here" class="form-control" id="questionTextArea"
+								rows="3"></textarea>
+						</div>
+
+						<button type="submit" class="btn btn-primary col-2 mb-5 btn-answer">Answer</button>
+					</div>
+
+					<!-- End Right part -->
+				</div>
+				<div class="col-3">
+					<!— tags —>
+						<div class="tags-area mt-5">
+							<h2 class="mt-5">Tags</h2>
+							<div class="col-md-12">
+								<div class="tag-list well">
+									<a href="#" class="btn btn-primary" role="button"><b style="font-size: 20pt;">FPS</b></a>
+									<a href="#" class="btn btn-primary" role="button"><b style="font-size: 10pt;">FPS</b></a>
+									<a href="#" class="btn btn-primary" role="button"><b style="font-size: 8pt;">FPS</b> </a>
+									<a href="#" class="btn btn-primary" role="button"><b style="font-size: 11pt;">FPS</b></a>
+									<a href="#" class="btn btn-primary" role="button"><b style="font-size: 17pt;">FPS</b></a>
+									<a href="#" class="btn btn-primary" role="button"><b style="font-size: 20pt;">FPS</b></a>
+									<a href="#" class="btn btn-primary" role="button"><b style="font-size: 12pt;">FPS</b></a>
+								</div>
+							</div>
+						</div>
+
+						<div class="tags-area mt-5">
+							<h2 class="mt-5">Best Members</h2>
+							<div class="col-md-12">
+								<div class="best-members-list well">
+									<a href="#" class="btn btn-info" role="button"><b style="font-size: 20pt;">FPS</b></a>
+									<a href="#" class="btn btn-info" role="button"><b style="font-size: 10pt;">FPS</b></a>
+									<a href="#" class="btn btn-info" role="button"><b style="font-size: 8pt;"> FPS</b></a>
+									<a href="#" class="btn btn-info" role="button"><b style="font-size: 11pt;">FPS</b></a>
+									<a href="#" class="btn btn-info" role="button"><b style="font-size: 17pt;">FPS</b></a>
+									<a href="#" class="btn btn-info" role="button"><b style="font-size: 20pt;">FPS</b></a>
+									<a href="#" class="btn btn-info" role="button"><b style="font-size: 12pt;">FPS</b></a>
+								</div>
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
+
+	</main>
+
+	<footer class="footer mt-auto py-3 bg-light">
+		<div class="container">
+			<span class="text-body-secondary">Place sticky footer content here.</span>
+		</div>
+	</footer>
+</body>
+
+</html>

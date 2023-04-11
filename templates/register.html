@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Sticky Footer Navbar Template · Bootstrap v5.3</title>
+	<link href="../static/css/bootstrap.css" rel="stylesheet" crossorigin="anonymous" />
+	<link href="../static/css/bootstrap.css.map" rel="stylesheet" />
+	<link href="../static/css/main.css" rel="stylesheet" />
+</head>
+
+<body class="d-flex flex-column h-100">
+	<header>
+		<!-- Fixed navbar -->
+		<nav class="navbar navbar-expand-md fixed-top" style="background: linear-gradient(120deg, #00e4d0, #5983e8);">
+			<div class="container-fluid">
+				<a href="index.html">
+					<div class="brand-logo">
+						<img src="../static/img/logo_askme.png" />
+					</div>
+				</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+					aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span
+						class="navbar-toggler-icon"></span></button>
+				<div class="collapse navbar-collapse" id="navbarCollapse">
+					<form class="d-flex ms-5" role="search">
+						<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+						<button class="btn btn-outline-success" type="submit">Search</button>
+						<a class="ms-4 btn btn-dark col-auto " href="ask.html" type="submit">Ask!</a>
+					</form>
+
+					<ul class="navbar-nav ms-auto mb-2 mb-md-0 me-4">
+						<div class="login-navbar">
+							<li class="nav-item">
+								<a class="nav-link active" aria-current="page" href="login.html">Login</a>
+							</li>
+						</div>
+						<div class="signup-navbar">
+							<li class="nav-item">
+								<a class="nav-link" href="signup.html">SignUp</a>
+							</li>
+						</div>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<!-- Begin page content -->
+	<main class="flex-shrink-0 bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-9">
+					<!-- Begin Right part -->
+
+					<div class="col-xl-9 mb-5">
+						<h1 class="text-white my-4">Registration</h1>
+						<div class="card" style="border-radius: 15px;">
+
+							<div class="card-body">
+								<div class="row align-items-center pt-4 pb-3">
+									<div class="col-md-3 ps-5">
+										<h6 class="mb-0">Login</h6>
+									</div>
+									<div class="col-md-9 pe-5">
+										<input type="text" class="form-control form-control-lg" />
+									</div>
+								</div>
+
+								<hr class="mx-n3">
+								<div class="row align-items-center py-3">
+									<div class="col-md-3 ps-5">
+										<h6 class="mb-0">Email address</h6>
+									</div>
+									<div class="col-md-9 pe-5">
+										<input type="email" class="form-control form-control-lg" placeholder="example@example.com" />
+									</div>
+								</div>
+
+								<hr class="mx-n3">
+								<div class="row align-items-center pt-4 pb-3">
+									<div class="col-md-3 ps-5">
+										<h6 class="mb-0">NickName</h6>
+									</div>
+									<div class="col-md-9 pe-5">
+										<input type="text" class="form-control form-control-lg" />
+									</div>
+								</div>
+
+								<hr class="mx-n3">
+								<div class="row align-items-center pt-4 pb-3">
+									<div class="col-md-3 ps-5">
+										<h6 class="mb-0">Password</h6>
+									</div>
+									<div class="col-md-9 pe-5">
+										<input type="password" class="form-control form-control-lg" />
+									</div>
+								</div>
+
+								<hr class="mx-n3">
+								<div class="row align-items-center pt-4 pb-3">
+									<div class="col-md-3 ps-5">
+										<h6 class="mb-0">Repeat password</h6>
+									</div>
+									<div class="col-md-9 pe-5">
+										<input type="password" class="form-control form-control-lg" />
+									</div>
+								</div>
+
+								<hr class="mx-n3">
+								<div class="row align-items-center py-3">
+									<div class="col-md-3 ps-5">
+										<h6 class="mb-0">Upload avatar</h6>
+									</div>
+									<div class="col-md-9 pe-5">
+										<input class="form-control form-control-lg" id="formFileLg" type="file" />
+										<div class="small text-muted mt-2">Upload your avatar. Max file size 50 MB</div>
+									</div>
+								</div>
+
+
+								<hr class="mx-n3">
+								<div class="px-5 py-4">
+									<button type="submit" class="btn btn-primary btn-lg">SignUp!</button>
+								</div>
+
+							</div>
+						</div>
+
+					</div>
+
+
+
+					<!-- End Right part -->
+				</div>
+				<div class="col-3">
+					<!— tags —>
+						<div class="tags-area mt-5">
+							<h2 class="mt-5">Tags</h2>
+							<div class="col-md-12">
+								<div class="tag-list well">
+									<a href="#" class="btn btn-primary" role="button"><b style="font-size: 20pt;">FPS</b></a>
+									<a href="#" class="btn btn-primary" role="button"><b style="font-size: 10pt;">FPS</b></a>
+									<a href="#" class="btn btn-primary" role="button"><b style="font-size: 8pt;">FPS</b> </a>
+									<a href="#" class="btn btn-primary" role="button"><b style="font-size: 11pt;">FPS</b></a>
+									<a href="#" class="btn btn-primary" role="button"><b style="font-size: 17pt;">FPS</b></a>
+									<a href="#" class="btn btn-primary" role="button"><b style="font-size: 20pt;">FPS</b></a>
+									<a href="#" class="btn btn-primary" role="button"><b style="font-size: 12pt;">FPS</b></a>
+								</div>
+							</div>
+						</div>
+
+						<div class="tags-area mt-5">
+							<h2 class="mt-5">Best Members</h2>
+							<div class="col-md-12">
+								<div class="best-members-list well">
+									<a href="#" class="btn btn-info" role="button"><b style="font-size: 20pt;">FPS</b></a>
+									<a href="#" class="btn btn-info" role="button"><b style="font-size: 10pt;">FPS</b></a>
+									<a href="#" class="btn btn-info" role="button"><b style="font-size: 8pt;"> FPS</b></a>
+									<a href="#" class="btn btn-info" role="button"><b style="font-size: 11pt;">FPS</b></a>
+									<a href="#" class="btn btn-info" role="button"><b style="font-size: 17pt;">FPS</b></a>
+									<a href="#" class="btn btn-info" role="button"><b style="font-size: 20pt;">FPS</b></a>
+									<a href="#" class="btn btn-info" role="button"><b style="font-size: 12pt;">FPS</b></a>
+								</div>
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<footer class="footer mt-auto py-3 bg-light">
+		<div class="container">
+			<span class="text-body-secondary">Place sticky footer content here.</span>
+		</div>
+	</footer>
+</body>
+
+</html>
