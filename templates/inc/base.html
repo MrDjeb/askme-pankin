@@ -6,73 +6,95 @@
     <meta charset="utf-8">
     <title>Sticky Footer Navbar Template · Bootstrap v5.3</title>
     <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" crossorigin="anonymous">
-    <!-- Custom styles for this template -->
+    <link href="{% static 'css/bootstrap.css.map' %}" rel="stylesheet">
     <link href="{% static 'css/main.css' %}" rel="stylesheet">
   </head>
 
-  <body class="d-flex flex-column h-100">  
-    <header>
-      <!-- Fixed navbar -->
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Fixed navbar</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav me-auto mb-2 mb-md-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled">Disabled</a>
-              </li>
-            </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+<body class="d-flex flex-column h-100">
+  <header>
+    <nav class="navbar navbar-expand-md fixed-top" style="background: linear-gradient(120deg, #00e4d0, #5983e8);">
+      <div class="container-fluid">
+        <a href="index.html">
+          <div class="brand-logo">
+            <img src="{% static 'img/logo_askme.png' %}"/>
+          </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span
+            class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <form class="d-flex ms-5" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+            <button class="btn btn-outline-success" type="submit">Search</button>
+            <a class="ms-4 btn btn-dark col-auto " href="ask.html" type="submit">Ask!</a>
+          </form>
+          <!-- Is login block -->
+
+            
+            {% if islogin %}
+              {% include 'inc/logged-navbar.html' %}
+            {% else %}
+              {% include 'inc/unknown-navbar.html' %}
+            {% endif %}
+            
+
+          <!-- Is login block -->
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="flex-shrink-0 bg">
+    <div class="container">
+      <div class="row">
+        <div class="col-9">
+          <!-- Begin Right part -->
+
+            {%block content_right%}{% endblock content_right %}
+
+          <!-- End Right part -->
+        </div>
+        <div class="col-3 vertical-line">
+
+          <div class="tags-area mt-5">
+            <h2 class="mt-5">Tags</h2>
+            <div class="col-md-12">
+              <div class="tag-list well">
+                <!-- Tags list -->
+
+                  {% for tag in tags %}
+                    {% include 'inc/items/tag-item.html' %}
+                  {% endfor %}
+                
+                <!-- Tags list -->
+              </div>
+            </div>
+          </div>
+
+          <div class="tags-area mt-5">
+            <h2 class="mt-5">Best Members</h2>
+            <div class="col-md-12">
+              <div class="best-members-list well">
+              <!-- Members list -->
+
+                {% for member in members %}
+                  {% include 'inc/items/member-item.html' %}
+                {% endfor %}
+
+                <!-- Members list-->
+              </div>
+            </div>
           </div>
         </div>
-      </nav>
-    </header>
-
-    <!-- Begin page content -->
-    <main class="flex-shrink-0">
-      <div class="container">
-        <h1 class="mt-5">New questions</h1>
-        <div class="row">
-          <div class="col-9">
-
-            {%block content%}{% endblock content %}
-
-          </div>
-          <div class="col-3">Left</div>
-        </div>
-
-        <div>
-          <nav aria-label="Page navigation example">
-            <ul class="pagination">
-              <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item"><a class="page-link" href="#">Next</a></li>
-            </ul>
-          </nav>
-        </div>
-        
       </div>
-    </main>
+    </div>
+  </main>
 
-    <footer class="footer mt-auto py-3 bg-light">
-      <div class="container">
-        <span class="text-body-secondary">Place sticky footer content here.</span>
-      </div>
-    </footer>
+  <footer class="footer mt-auto py-3 bg-light">
+    <div class="container">
+      <span class="text-body-secondary">Place sticky footer content here.</span>
+    </div>
+  </footer>
+</body>
 
-  </body>
 </html>
