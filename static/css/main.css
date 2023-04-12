@@ -4,7 +4,7 @@ main>.container {
 
 .bg {
   width: 100%;
-
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,8 +38,13 @@ main>.container {
   }
 }
 
+.bg-navbar{
+  background: linear-gradient(120deg, #00e4d0, #5983e8);
+  border-bottom:  1.5px solid green;
+}
+
 .vertical-line{
-  border-left:  1px solid green;
+  border-left:  1.5px solid green;
   border-left-style: ridge;
 }
 

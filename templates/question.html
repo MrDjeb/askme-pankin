@@ -2,64 +2,39 @@
 
 {% block content_right %}
 
-<div class="question">
-  <div class="row">
-    <div class="col-3">
-      <div class="question-avatar">
-        <img src="../static/img/avatar1.jpeg" alt="avatar" />
-      </div>
-    </div>
-    <div class="col-6">
-      <h2><a href="#">{{ question.title }}</a></h2>
-      <div class="question-text">{{ question.text }}</div>
-      <div class="mt-5 row">
-        <div class="col-4">Answeres (3)</div>
-        <div class="col-8">
-          <a href="#">Black</a> <a href="#">Black</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+  <h2 class="mt-5">{{ question.title}}</h2>
+  {% include 'inc/items/question-item.html' %}
 
-<div class="row me-4">
-  <h2 class="mt-4 mb-3">Answers</h2>
+  <div class="row me-4">
+    <h2 class="mt-4 mb-3">Answers</h2>
 
-  <!-- Answers -->
+    <!-- Answers -->
 
-    {% include 'inc/items/answer-item.html' %}
-    {% include 'inc/items/answer-item.html' %}
+      {% include 'inc/items/answer-item.html' %}
+      {% include 'inc/items/answer-item.html' %}
 
-  <!-- Answers -->
-  <nav aria-label="Page navigation example">
-    <ul class="pagination justify-content-center">
-      <li class="page-item enabled">
-        <a href="?page=0" class="page-link">Previous</a>
-      </li>
-      <li class="page-item active"><a class="page-link" href="?page=1"> 1 </a></li>
+    <!-- Answers -->
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        <li class="page-item enabled">
+          <a href="?page=0" class="page-link">Previous</a>
+        </li>
+        <li class="page-item active"><a class="page-link" href="?page=1"> 1 </a></li> 
+        <li class="page-item enabled">
+          <a href="?page=2" class="page-link" href="#">Next</a>
+        </li>
+      </ul>
+    </nav>
 
-      <li class="page-item enabled">
-        <a href="?page=2" class="page-link" href="#">Next</a>
-      </li>
-    </ul>
-  </nav>
-
-</div>
-
-<div class="row inpAns">
-  <div class="mb-3">
-    <label for="questionTextArea" class="form-label">Your answer</label>
-    <textarea placeholder="Enter your answer here" class="form-control" id="questionTextArea"
-      rows="3"></textarea>
   </div>
 
-  <button type="submit" class="btn btn-primary col-2 mb-5 btn-answer">Answer</button>
-</div>
+  <div class="row inpAns">
+    <div class="mb-3">
+      <label for="questionTextArea" class="form-label">Your answer</label>
+      <textarea placeholder="Enter your answer here" class="form-control" id="questionTextArea"
+        rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary col-2 mb-5 btn-answer">Answer</button>
+  </div>
 
-
-
-  <h2 class="mt-5">New questions</h2>
-  {% for question in questions %}
-    {% include 'inc/items/question-item.html' %}
-  {% endfor %}
 {% endblock %}
