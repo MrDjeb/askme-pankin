@@ -1,6 +1,6 @@
 {% extends 'inc/base.html' %}
 
-{% block content_right %}
+{% block content_left %}
 
   <h2 class="mt-5">{{ question.title}}</h2>
   {% include 'inc/items/question-item.html' %}
@@ -10,21 +10,12 @@
 
     <!-- Answers -->
 
+    {% for answer in page_obj %}
       {% include 'inc/items/answer-item.html' %}
-      {% include 'inc/items/answer-item.html' %}
+    {% endfor %}
 
     <!-- Answers -->
-    <nav aria-label="Page navigation example">
-      <ul class="pagination justify-content-center">
-        <li class="page-item enabled">
-          <a href="?page=0" class="page-link">Previous</a>
-        </li>
-        <li class="page-item active"><a class="page-link" href="?page=1"> 1 </a></li> 
-        <li class="page-item enabled">
-          <a href="?page=2" class="page-link" href="#">Next</a>
-        </li>
-      </ul>
-    </nav>
+    {% include 'inc/paginator.html' %}
 
   </div>
 

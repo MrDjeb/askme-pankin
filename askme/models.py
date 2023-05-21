@@ -47,13 +47,22 @@ MEMBERS = [
     } for i in range(10)
 ]
 
+ANSWERS = [
+    {
+        'id': f'{i}',
+        'title': f'Question{i}',
+        'text': f'Text{i}'
+    } for i in range(67)
+]
+
 QUESTIONS = [
     {
         'id': f'{i}',
         'title': f'Question{i}',
         'text': f'Text{i}'
-    } for i in range(10)
+    } for i in range(55)
 ]
+
 
 BASE_CONTEXT = {
         'islogin': False,
