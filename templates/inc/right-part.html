@@ -1,0 +1,29 @@
+<div class="tags-area mt-5">
+	<h2 class="mt-5">Tags</h2>
+	<div class="col-md-12">
+		<div class="tag-list well">
+			<!-- Tags list -->
+
+				{% for tag in tags %}
+					{% include 'inc/items/tag-item.html' %}
+				{% endfor %}
+			
+			<!-- Tags list -->
+		</div>
+	</div>
+</div>
+
+<div class="tags-area mt-5">
+	<h2 class="mt-5">Best Members</h2>
+	<div class="col-md-12">
+		<div class="best-members-list well">
+		<!-- Members list -->
+
+			{% for member in members %}
+				{% include 'inc/items/member-item.html' %}
+			{% endfor %}
+
+			<!-- Members list-->
+		</div>
+	</div>
+</div>

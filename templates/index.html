@@ -1,7 +1,11 @@
 {% extends 'inc/base.html' %}
+{% load static %}
 
 {% block content_left %}
-  <h2 class="mt-5">New questions</h2>
+  <nav class="navbar mt-5">
+    <h2><a href="{%url 'index'%}">New questions!</a></h2>
+    <h2><a href="{%url 'hot'%}">Hot questions!</a></h2>
+  </nav>
   {% for question in page_obj %}
     {% include 'inc/items/question-item.html' %}
   {% endfor %}
