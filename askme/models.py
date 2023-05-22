@@ -1,17 +1,38 @@
 from django.db import models
 from django.contrib.auth.models import User
 import random
+    
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    avatar = models.ImageField(upload_to="static/img")
+
+class Tag(models.Model):
+    title = models.CharField(max_length=16)
+    count = models.IntegerField
+
+    def __str__(self):
+        return f"{self.title}"
 
 class QuestionManager(models.Manager):
+    def by_created_at(self):
+        return self.order_by('-created_at')
+
+    def by_rating(self):
+        return self.order_by('-rating')
+
+    def by_tag(self, title):
+        return self.filter(tag__title = title)
+
     def get_index(self):
         return self
 
 class Question(models.Model):
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
     text = models.TextField
     rating = models.IntegerField
     created_at = models.DateTimeField(auto_now_add=True)
-    tag = models.ForeignKey('Tag', null=True, on_delete=models.SET_NULL)
+    tags = models.ManyToManyField(Tag, related_name='questions')
 
     objects = QuestionManager()
 
@@ -20,19 +41,17 @@ class Question(models.Model):
 
 
 class Answer(models.Model):
+    question=models.ForeignKey(Question, on_delete=models.CASCADE)
+    profile=models.ForeignKey(Profile, on_delete=models.CASCADE)
     text = models.TextField
     created_at = models.DateTimeField(auto_now_add=True)
     rating = models.IntegerField
     is_right = models.BooleanField
 
-class Tag(models.Model):
-    title = models.CharField(max_length=255)
-    count = models.IntegerField
-    
-class User(models.Model):
-    profile = models.OneToOneField(User, on_delete=models.PROTECT)
-    mickname = models.CharField(max_length=255)
-    avatar = models.ImageField
+class Like(models.Model):
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    type = models.BooleanField
+
 
 TAGS = [
     {

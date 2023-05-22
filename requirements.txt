@@ -12,6 +12,7 @@ defer==1.0.6
 distro==1.7.0
 distro-info===1.1build1
 Django==4.2
+Faker==18.9.0
 gyp==0.1
 httplib2==0.20.2
 idna==3.3
