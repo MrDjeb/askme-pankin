@@ -1,14 +1,29 @@
 from django.db import models
 from django.contrib.auth.models import User
 import random
-    
+
+class ProfileManager(models.Manager):
+    def best(self):
+        return self.annotate(models.Count('answer')).order_by('-answer__count')[:10]
+
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     avatar = models.ImageField(upload_to="static/img")
 
+    objects = ProfileManager()
+
+    def __str__(self):
+        return self.user.username
+
+class TagManager(models.Manager):
+    def popular(self):
+        return self.annotate(models.Count('question')).order_by('-question__count')[:10]
+
 class Tag(models.Model):
     title = models.CharField(max_length=16)
-    count = models.IntegerField
+    count = models.IntegerField()
+
+    objects = TagManager()
 
     def __str__(self):
         return f"{self.title}"
@@ -29,10 +44,10 @@ class QuestionManager(models.Manager):
 class Question(models.Model):
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
-    text = models.TextField
-    rating = models.IntegerField
+    text = models.TextField()
+    rating = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
-    tags = models.ManyToManyField(Tag, related_name='questions')
+    tags = models.ManyToManyField(Tag, blank=True)
 
     objects = QuestionManager()
 
@@ -43,14 +58,14 @@ class Question(models.Model):
 class Answer(models.Model):
     question=models.ForeignKey(Question, on_delete=models.CASCADE)
     profile=models.ForeignKey(Profile, on_delete=models.CASCADE)
-    text = models.TextField
+    text = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
-    rating = models.IntegerField
-    is_right = models.BooleanField
+    rating = models.IntegerField()
+    is_right = models.BooleanField()
 
 class Like(models.Model):
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
-    type = models.BooleanField
+    type = models.BooleanField()
 
 
 TAGS = [
