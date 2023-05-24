@@ -6,56 +6,46 @@
       <div class="card-body p-md-5">
         <div class="row justify-content-center">
           <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+            <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Settings {{ profile_data.user.username }}</p>
 
-            <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Settings Username</p>
+            <form class="mx-1 mx-md-4"  action="{% url 'settings' %}" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
 
-            <form class="mx-1 mx-md-4">
+              {% if form.non_field_errors %}
+              <div class="alert alert-danger" role="alert">
+                {% for error in form.non_field_errors %}
+                  {{ error }}
+                {% endfor %}
+              </div>
+              {% endif %}
 
+              {% for field in form %}
               <div class="d-flex flex-row align-items-center mb-4">
                 <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                 <div class="form-outline flex-fill mb-0">
-                  <input type="text" id="form3Example1c" class="form-control" value="Some data"/>
-                  <label class="form-label" for="form3Example1c">Your Login</label>
-                </div>
-              </div>
-
-              <div class="d-flex flex-row align-items-center mb-4">
-                <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
-                <div class="form-outline flex-fill mb-0">
-                  <input type="email" id="form3Example3c" class="form-control" value="Some data"/>
-                  <label class="form-label" for="form3Example3c">Your Email</label>
-                </div>
-              </div>
-
-              <div class="d-flex flex-row align-items-center mb-4">
-                <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
-                <div class="form-outline flex-fill mb-0">
-                  <input type="text" id="form3Example4c" class="form-control" value="Some data"/>
-                  <label class="form-label" for="form3Example4c">Your Nickname</label>
-                </div>
-              </div>
-
-              <div class="d-flex flex-row align-items-center mb-4">
-                <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
-                <div class="form-outline flex-fill mb-0">
-                  <input class="form-control" id="formFile" type="file" />
+                  <input type="{{ field.field.widget.input_type }}" name={{ field.name }} id="{{ field.id_for_label }}" class="form-control" value="{{ field.value|default_if_none:"" }}"/>
+                  {{ field.errors }}
+                  {% if field.id_for_label == 'id_avatar' %}
                   <div class="small text-muted mt-2">Upload your avatar. Max file size 50 MB</div>
+                  {% else %}
+                  <label class="form-label" for="{{ field.id_for_label }}">Your {{ field.label }}</label>
+                  {% endif %}
                 </div>
               </div>
+              {% endfor %}
 
               <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                <button type="button" class="btn btn-primary btn-lg">Save</button>
+                <button type="submit" class="btn btn-primary btn-lg">Save</button>
               </div>
 
             </form>
 
           </div>
+
           <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-
-            <img src="../static/img/avatar1.jpeg"
-              class="img-fluid" alt="Sample image">
-
+            <img src="{{ profile_data.avatar.url }}" class="img-fluid" alt="Sample image">
           </div>
+
         </div>
       </div>
     </div>

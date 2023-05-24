@@ -11,14 +11,17 @@ class ProfileManager(models.Manager):
         return members
 
     def get_auth(self, request):
-        if request.user.is_authenticated:
-            return self.get(user=User.objects.get(username=request.user))
-        else:
+        try:
+            if request.user.is_authenticated:
+                return self.get(user=User.objects.get(username=request.user))
+            else:
+                return None
+        except:
             return None
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    avatar = models.ImageField(blank=True, null=True, default="static/img/avatar1.jpeg", upload_to="static/img")
+    avatar = models.ImageField(blank=True, null=True, default="avatar1.jpeg", upload_to="avatars/%Y/%M/%D/")
 
     objects = ProfileManager()
     

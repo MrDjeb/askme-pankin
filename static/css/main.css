@@ -119,6 +119,12 @@ main>.container {
   border-radius: 50%;
 }
 
+.navbar-avatar {
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
+}
+
 .question-text {
   margin-bottom: 3%;
 }
