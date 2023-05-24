@@ -5,13 +5,20 @@ import random
 class ProfileManager(models.Manager):
     def get_top(self):
         members = self.annotate(models.Count('answer')).order_by('-answer__count')[:10]
-        for m in members:
-            m.font_size = f'{random.randint(6, 25)}'
+        if members:
+            for m in members.iterator():
+                m.font_size = f'{random.randint(6, 25)}'
         return members
+
+    def get_auth(self, request):
+        if request.user.is_authenticated:
+            return self.get(user=User.objects.get(username=request.user))
+        else:
+            return None
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    avatar = models.ImageField(upload_to="static/img")
+    avatar = models.ImageField(blank=True, null=True, default="static/img/avatar1.jpeg", upload_to="static/img")
 
     objects = ProfileManager()
     
@@ -25,9 +32,10 @@ class TagManager(models.Manager):
     def get_top(self):
         #tags = self.annotate(models.Count('question')).order_by('-question__count')[:10]
         tags = self.order_by('-count')[:10]
-        for t in tags:
-            # TODO размер тега от его популярности
-            t.font_size = f'{random.randint(6, 25)}' #t | {'font_size': f'{random.randint(6, 25)}'}
+        if tags:
+            for t in tags.iterator():
+                # TODO размер тега от его популярности
+                t.font_size = f'{random.randint(6, 25)}' #t | {'font_size': f'{random.randint(6, 25)}'}
         return tags
 
 

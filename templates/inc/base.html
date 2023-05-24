@@ -32,7 +32,7 @@
           <!-- Is login block -->
 
             
-            {% if islogin %}
+            {% if profile_data %}
               {% include 'inc/logged-navbar.html' %}
             {% else %}
               {% include 'inc/unknown-navbar.html' %}
@@ -71,6 +71,9 @@
       <span class="text-body-secondary">Place sticky footer content here.</span>
     </div>
   </footer>
+
+  <script src="{% static 'js/bootstrap.js' %}"></script>
+  <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script> 
 </body>
 
 </html>

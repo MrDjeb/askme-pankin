@@ -20,12 +20,15 @@ class Command(BaseCommand):
         users = [
             User(
                 username=fk.user_name(),
-                password=fk.password(),
+                #password=fk.password(),
                 email=fk.email(),
                 first_name=fk.first_name(),
                 last_name=fk.last_name(),
             ) for i in range(ratio)
         ]
+
+        for u in users:
+            u.set_password(fk.password())
 
         ava = "static/img/avatar1.jpeg"
         profiles = [

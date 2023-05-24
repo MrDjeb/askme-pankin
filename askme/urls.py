@@ -4,7 +4,8 @@ from askme import views
 
 urlpatterns = [
     path('', views.index, name="index"),
-    path('login/', views.login, name="login"),
+    path('login/', views.log_in, name="login"),
+    path('logout/', views.log_out, name='logout'),
     path('signup/', views.signup, name="signup"),
     path('settings/', views.settings, name="settings"),
     path('hot/', views.hot, name="hot"),
