@@ -4,22 +4,32 @@
 
   <h1 class="mt-5">Add new question</h1>
   <div class="row inpAns">
-    <div class="textarea-add">
-      <label for="questionTitleArea" class="form-label">Title</label>
-      <textarea placeholder="How to generate website?" class="form-control" id="questionTitleArea"
-        rows="1"></textarea>
-    </div>
-    <div class="textarea-add">
-      <label for="questionTextArea" class="form-label">Text</label>
-      <textarea placeholder="Have no idea about it..." class="form-control" id="questionTextArea"
-        rows="5"></textarea>
-    </div>
-    <div class="textarea-add">
-      <label for="questionTagsArea" class="form-label">Tags</label>
-      <textarea placeholder="tag1, tag2, tag3" class="form-control" id="questionTagsArea"
-        rows="1"></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary col-3 ms-5 mb-5 btn-answer">Generate Ask!</button>
+
+    <form class="mx-1 mx-md-4"  action="{% url 'ask' %}" method="post">
+      {% csrf_token %}
+
+      {% if form.non_field_errors %}
+      <div class="alert alert-danger" role="alert">
+        {% for error in form.non_field_errors %}
+          {{ error }}
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      {% for field in form %}
+
+      <div class="textarea-add">
+        <label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+        <textarea placeholder="{{ field.help_text }}" class="form-control" name={{ field.name }} id="{{ field.id_for_label }}"
+         rows={% if field.id_for_label == 'id_text' %}10{%else%}1{%endif%}></textarea>
+        {{ field.errors }}
+      </div>
+
+      {% endfor %}
+
+      <button type="submit" class="btn btn-primary col-3 ms-5 mb-5 btn-answer">Generate Ask!</button>
+
+    </form>
   </div>
 
 {% endblock %}

@@ -94,6 +94,12 @@ class Answer(models.Model):
     objects = AnswerManage()
 
 
-class Like(models.Model):
+class LikeQuestions(models.Model):
+    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    type = models.BooleanField()
+
+class LikeAnswers(models.Model):
+    answer = models.ForeignKey(Answer, on_delete=models.CASCADE)
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
     type = models.BooleanField()

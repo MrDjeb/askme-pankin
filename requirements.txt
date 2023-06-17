@@ -1,4 +1,5 @@
 asgiref==3.6.0
+beautifulsoup4==4.12.2
 blinker==1.4
 certifi==2020.6.20
 chardet==4.0.0
@@ -12,6 +13,9 @@ defer==1.0.6
 distro==1.7.0
 distro-info===1.1build1
 Django==4.2
+django-bootstrap-v5==1.0.11
+django-bootstrap5==23.3
+django-forms-bootstrap==3.1.0
 Faker==18.9.0
 gyp==0.1
 httplib2==0.20.2
@@ -30,6 +34,7 @@ netifaces==0.11.0
 notify2==0.3
 oauthlib==3.2.0
 onboard==1.4.1
+Pillow==9.5.0
 protobuf==3.12.4
 psutil==5.9.0
 pycairo==1.20.1
@@ -52,6 +57,7 @@ requests==2.25.1
 SecretStorage==3.3.1
 setproctitle==1.2.2
 six==1.16.0
+soupsieve==2.4.1
 sqlparse==0.4.3
 systemd-python==234
 ubuntu-advantage-tools==8001

@@ -137,3 +137,51 @@ main>.container {
   margin-bottom: 1rem !important;
   padding-right: 3rem !important;
 }
+
+.like-btn {
+  width: 30px;
+	height: 30px;
+	margin: 0 auto;
+	border-radius: 50%;
+	color: rgb(0, 6, 93);
+	background-color:rgba(38, 166, 153, 0);
+	border-color: rgb(0, 0, 0);
+	border-width: 1px;
+	font-size: 15px;
+}
+
+.like-btn:focus {
+  width: 30px;
+	height: 30px;
+	margin: 0 auto;
+	border-radius: 50%;
+	color: rgb(43, 83, 169);
+	background-color:rgba(38, 166, 153, 0);
+	border-color: rgb(123, 20, 134);
+	border-width: 1px;
+	font-size: 15px;
+}
+
+.dislike-btn {
+  width: 30px;
+	height: 30px;
+	margin: 0 auto;
+	border-radius: 50%;
+	color: rgb(93, 0, 28);
+	background-color:rgba(38, 166, 153, 0);
+	border-color: rgb(0, 0, 0);
+	border-width: 1px;
+	font-size: 15px;
+}
+
+.dislike-btn:focus {
+  width: 30px;
+	height: 30px;
+	margin: 0 auto;
+	border-radius: 50%;
+	color: rgb(197, 75, 136);
+	background-color:rgba(38, 166, 153, 0);
+	border-color: rgb(123, 20, 134);
+	border-width: 1px;
+	font-size: 15px;
+}

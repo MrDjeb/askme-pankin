@@ -14,6 +14,9 @@ urlpatterns = [
     path('question/<int:question_id>/', views.question, name="question"),
     path('tag/<str:tag_title>/', views.tag, name="tag"),
     path('ask/', views.ask, name="ask"),
+    path('rating_set_question', views.rating_set_question, name= 'rating_set_question'),
+    path('rating_set_answer', views.rating_set_answer, name= 'rating_set_answer'),
+    path('correct_set_answer', views.correct_set_answer, name= 'correct_set_answer'),
 ]
 
 if settings.DEBUG:

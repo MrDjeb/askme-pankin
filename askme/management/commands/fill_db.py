@@ -30,7 +30,7 @@ class Command(BaseCommand):
         for u in users:
             u.set_password(fk.password())
 
-        ava = "static/img/avatar1.jpeg"
+        ava = "avatars/avatar1.jpeg"
         profiles = [
             models.Profile(
                 user=users[i],
@@ -58,7 +58,7 @@ class Command(BaseCommand):
                 profile=choice(profiles),
                 title = fk.catch_phrase(),
                 text = fk.text(max_nb_chars=1000),
-                rating = randint(0, ratio*100),
+                rating = randint(0, ratio),
                 created_at = fk.date_time(),
             ) for i in range(ratio*10)
         ]
@@ -76,7 +76,7 @@ class Command(BaseCommand):
                 question=choice(questions),
                 profile=choice(profiles),
                 text=fk.text(),
-                rating=randint(0,ratio*100),
+                rating=randint(0, ratio),
                 created_at=fk.date_time(),
                 is_right=choice([True, False]),
             ) for i in range(ratio*100)
@@ -84,15 +84,27 @@ class Command(BaseCommand):
         models.Answer.objects.bulk_create(answers)
         self.stdout.write("Generated answers")
 
-        likes = [
-            models.Like(
-                profile=choice(profiles),
-                type=choice([True, False]),
-            ) for _ in range(ratio*200)
-        ]
-        models.Like.objects.bulk_create(likes)
-        self.stdout.write("Generated likes")
+        likeQuestions = []
+        for quest in questions:
+            for i in range(quest.rating):
+                likeQuestions.append(models.LikeQuestions(
+                    profile=profiles[i],
+                    question=quest,
+                    type=True,
+                ))
+        models.LikeQuestions.objects.bulk_create(likeQuestions)
+        self.stdout.write("Generated LikeQuestions")
 
+        likeAnswers = []
+        for ans in answers:
+            for i in range(ans.rating):
+                likeAnswers.append(models.LikeAnswers(
+                    profile=profiles[i],
+                    answer=ans,
+                    type=True,
+                ))
+        models.LikeAnswers.objects.bulk_create(likeAnswers)
+        self.stdout.write("Generated LikeAnswers")
                 
 
 

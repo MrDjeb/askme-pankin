@@ -19,13 +19,26 @@
 
   </div>
 
-  <div class="row inpAns">
-    <div class="mb-3">
-      <label for="questionTextArea" class="form-label">Your answer</label>
-      <textarea placeholder="Enter your answer here" class="form-control" id="questionTextArea"
-        rows="3"></textarea>
+  <form class="mx-1 mx-md-4"  action="{%url 'question' question.id%}" method="post">
+    {% csrf_token %}
+
+    {% if form.non_field_errors %}
+    <div class="alert alert-danger" role="alert">
+      {% for error in form.non_field_errors %}
+        {{ error }}
+      {% endfor %}
     </div>
-    <button type="submit" class="btn btn-primary col-2 mb-5 btn-answer">Answer</button>
-  </div>
+    {% endif %}
+
+    <div class="row inpAns">
+      <div class="mb-3">
+        <label for="{{ form.answer.id_for_label }}" class="form-label">Your {{ form.answer.label }}</label>
+        <textarea placeholder="{{ form.answer.help_text }}" class="form-control" id="{{ form.answer.id_for_label }}" name={{ form.answer.name }}
+          rows="3"></textarea>
+          {{ form.answer.errors }}
+      </div>
+      <button type="submit" class="btn btn-primary col-2 mb-5 btn-answer">Answer</button>
+    </div>
+  </form>
 
 {% endblock %}

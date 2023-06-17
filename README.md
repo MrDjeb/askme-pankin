@@ -13,7 +13,7 @@
 
 >deactivate __#выйти из акружения__
 ----
->pip3 freeze > requirements.txt __#оздать файл с зависимостями__
+>pip3 freeze > requirements.txt __#cоздать файл с зависимостями__
 
 >pip3 install -r requirements.txt __#скачать зависимости__
 ----
@@ -29,7 +29,15 @@
 
 >python3 manage.py startapp askme __#cоздать Django  приложение__
 
+----
 
 
-
+find . -path "*/migrations/*.py" -not -name "__init__.py" -delete &&
+find . -path "*/migrations/*.pyc" -delete &&
+rm db.sqlite3 &&
+python3 manage.py makemigrations &&
+python3 manage.py migrate &&
+python3 manage.py migrate --run-syncdb &&
+python3 manage.py fill_db 20 &&
+python3 manage.py runserver
 
